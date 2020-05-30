@@ -1,7 +1,14 @@
+//TODO:
+// Setup the directory structure
+// Install the express
+
 // Accessing express 
 const express = require('express');
 
 const app = express();
+
+// importing router
+app.use('/',require('./routes'));
 
 // Intializing PORT for the server
 
