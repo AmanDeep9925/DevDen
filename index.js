@@ -4,10 +4,16 @@
 // Add the static folder for css
 
 // Accessing express 
+const port = 8000;
 const express = require('express');
-
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
+
+// Accesing databse
+
+const db = require('./config/mongoose');
+
+
 
 // accessing the static folders
 app.use(express.static('./assets'));
@@ -29,9 +35,6 @@ app.set('view engine','ejs');
 app.set('views','./views');
 
 // Intializing PORT for the server
-
-const port = 8000;
-
 
 
 app.listen(port,(err) =>{

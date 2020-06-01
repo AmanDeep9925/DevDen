@@ -9,3 +9,4 @@ module.exports.profile = (req,res) =>{
         title : 'Manage your Den'
     })
 }
+

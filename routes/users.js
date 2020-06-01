@@ -13,4 +13,4 @@ router.get('/profile',userController.profile);
 
 router.get('/posts',require('./posts'));
 
-module.exports = router;
+module.exports = router; 
