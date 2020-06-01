@@ -1,11 +1,23 @@
 //TODO:
 // Setup the directory structure
 // Install the express
+// Add the static folder for css
 
 // Accessing express 
 const express = require('express');
 
 const app = express();
+const expressLayouts = require('express-ejs-layouts');
+
+// accessing the static folders
+app.use(express.static('./assets'));
+// To access the express layout
+app.use(expressLayouts);
+
+// To set the styles and scripts for pages
+
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 
 // importing router
 app.use('/',require('./routes'));

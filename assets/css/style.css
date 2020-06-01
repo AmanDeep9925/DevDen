@@ -1,0 +1,34 @@
+body{
+    background-color: #272343;
+    /* color: #ffffff; */
+    font-family: 'fira code';
+}
+
+header{
+    position: fixed;
+    top: 0;
+    margin: auto;
+    height: 50px;
+    width: 100%;
+    color: #272343;
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+h1{
+    text-align: center;
+    color:white;
+    margin: 100px;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding-bottom: -10px;
+}
