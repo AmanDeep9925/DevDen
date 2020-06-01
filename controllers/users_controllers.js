@@ -1,7 +1,11 @@
 module.exports.user = (req,res) =>{
-    res.end(`<h1>Welcom to your account </h1>`);
+    return res.render('user',{
+        title : 'Welcome to your Den'
+    })
 }
 
 module.exports.profile = (req,res) =>{
-    res.end(`<h1>Profile Router</h1>`);
+    return res.render('profile',{
+        title : 'Manage your Den'
+    })
 }

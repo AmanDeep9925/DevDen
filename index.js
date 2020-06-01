@@ -10,6 +10,12 @@ const app = express();
 // importing router
 app.use('/',require('./routes'));
 
+// Setting up the view engine
+
+app.set('view engine','ejs');
+
+app.set('views','./views');
+
 // Intializing PORT for the server
 
 const port = 8000;
