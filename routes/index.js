@@ -4,7 +4,12 @@ const router = express.Router();
 
 const homeController = require('../controllers/home_controller');
 
+
 router.get('/',homeController.home);
+
+// Login in and SignUp routes
+
+
 
 // router.get('/practice',homeController.practice);
 

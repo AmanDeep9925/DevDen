@@ -8,12 +8,18 @@ const port = 8000;
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
+
 
 // Accesing databse
 
 const db = require('./config/mongoose');
 
+// Using url encoder
 
+app.use(express.urlencoded());
+
+app.use(cookieParser());
 
 // accessing the static folders
 app.use(express.static('./assets'));
