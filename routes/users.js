@@ -8,6 +8,8 @@
 const express = require('express');
 
 const router = express.Router();
+const passport = require('passport');
+
 
 const userController = require('../controllers/users_controllers');
 
@@ -26,5 +28,11 @@ router.get('/signup',userController.signup);
 
 router.post('/create',userController.create);
 
+// use passport as a middleware to authenticate
+router.post('/createSession',passport.authenticate(
+    'local',
+    {failureRedirect : '/users/login'}),
+    userController.createSession
+);
 
 module.exports = router; 

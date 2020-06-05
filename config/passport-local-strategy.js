@@ -32,7 +32,7 @@ passport.use(new LocalStrategy({
 ));
 
 // Serializing the user to check which key is to be kept or not in cookies
-passport.serializeUser((done,user) => {
+passport.serializeUser((user,done) => {
     done(null,user.id);
 })
 

@@ -15,6 +15,11 @@ const cookieParser = require('cookie-parser');
 
 const db = require('./config/mongoose');
 
+// Accessing express session for cookie handling
+const session = require('express-session');
+const passport = require('passport');
+const passportLocal = require('./config/passport-local-strategy');
+
 // Using url encoder
 
 app.use(express.urlencoded());
@@ -31,8 +36,6 @@ app.use(expressLayouts);
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
 
-// importing router
-app.use('/',require('./routes'));
 
 // Setting up the view engine
 
@@ -40,9 +43,27 @@ app.set('view engine','ejs');
 
 app.set('views','./views');
 
+// Using sessions
+app.use(session({
+    name: 'DevDen',
+    // TODO: Change the secret before deployment in production mode
+    secret : 'blahSomething',
+    saveUninitialized:false,
+    resave:false,
+    cookie:{
+        maxAge:(1000*60*100)
+    }
+}));
+
+// Using passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Intializing router
+app.use('/',require('./routes'));
+
+
 // Intializing PORT for the server
-
-
 app.listen(port,(err) =>{
     if(err){
         console.log(`Unable to start the server :/ ${err}`);
