@@ -27,5 +27,4 @@ router.get('/signup',userController.signup);
 router.post('/create',userController.create);
 
 
-
 module.exports = router; 
