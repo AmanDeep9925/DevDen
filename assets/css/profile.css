@@ -1,0 +1,9 @@
+.user-info{
+    margin: auto;
+    height: auto;
+    width: 50vw;
+}
+
+.user-info p {
+    color: white;
+}

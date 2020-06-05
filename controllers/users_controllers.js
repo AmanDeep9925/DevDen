@@ -10,9 +10,21 @@ module.exports.user = (req,res) =>{
 }
 // Renders the post page
 module.exports.profile = (req,res) =>{
-    return res.render('profile',{
-        title : 'Manage your Den'
-    })
+
+    if(req.cookies.user_id){
+        User.findById(req.cookies.user_id,(err,user) =>{
+            if(user){
+                return res.render('profile',{
+                    title: "Your Den",
+                    user : user
+                })
+            }else{
+                return res.redirect('/users/login');
+            }
+        });
+    }else{
+        return res.redirect('/users/login');
+    }
 }
 
 // Remders the signup page
@@ -58,5 +70,35 @@ module.exports.create = (req,res) =>{
 }
 
 module.exports.createSession = (req,res) =>{
-    // ToDo later
+    // TODO:
+    // [X] : find the user
+    // [X] : handle user not found
+    // [X] : handle password which is not matched
+    // [X] : handle session creation
+    // [X] : handle user found
+
+    // find the user
+    User.findOne({email:req.body.email},(err,user) =>{
+        if(err) {
+            console.log("Error in finding user ://");
+            return;
+        }
+        // handle user found
+        if(user){
+            // handle password which doesn't match
+            if(user.password != req.body.password){
+                return res.redirect('back');
+            }
+            // handle session creation
+
+            res.cookie('user_id' , user.id);
+
+            return res.redirect('/users/profile');
+
+        }else{
+            // handle user not found
+            return res.redirect('back');
+        }
+    });
 }
+
