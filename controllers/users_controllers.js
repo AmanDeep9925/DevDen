@@ -17,12 +17,22 @@ module.exports.profile = (req,res) =>{
 
 // Remders the signup page
 module.exports.signup = (req,res) =>{
+
+    if(req.isAuthenticated()){
+        res.redirect('/users/profile');
+    }
+
     return res.render("signUp",{title: "Make a new Den"});
 }
 
 // Reders the sing in page
 
 module.exports.login = (req,res) =>{
+
+    if(req.isAuthenticated()){
+        res.redirect('/users/profile');
+    }
+
     return res.render("logIn",{title : "LogIn to Den"});
 }
 
@@ -58,5 +68,12 @@ module.exports.create = (req,res) =>{
 }
 
 module.exports.createSession = (req,res) =>{
+    return res.redirect('/');
+}
+
+// LogOut
+
+module.exports.destroySession = (req,res) =>{
+    req.logout();
     return res.redirect('/');
 }

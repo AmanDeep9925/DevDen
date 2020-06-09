@@ -46,6 +46,28 @@ passport.deserializeUser((id,done) =>{
 
         return done(null,user);
     })
-})
+});
+
+
+// Checking if the user is authenticate or not
+// It is a middleware function
+passport.checkAuthentication = (req,res,next) =>{
+    if(req.isAuthenticated()){
+        return next();
+    }
+
+    // if user is not authencticated
+    return res.redirect('/users/login');
+}
+
+passport.setAuthenticatedUser = (req,res,next) =>{
+    if(req.isAuthenticated()){
+        // req.user contains the current logged in user  
+        // And sending it to views to see the user info
+        res.locals.user = req.user;
+    }
+
+    next();
+}
 
 module.exports = passport;

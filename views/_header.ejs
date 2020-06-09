@@ -1,4 +1,33 @@
-
+<link rel="stylesheet" href="/css/header.css">
 <header>
-    Header Section
+    <div class="header-container">
+        <div class="header-brand">
+            <h2><a href="/">DevDen</a></h2>
+        </div>
+        <div class="nav">
+            <ul class="nav-list">
+                <% if (locals.user) { %>
+                    
+                    <li class="nav-item ">
+                        <a href="/users/profile" class="username"><%= user.name %> </a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="/users/logout"> Log Out</a>
+                    </li>
+    
+                <% }else { %> 
+    
+                    <li class="nav-item">
+                        <a href="/users/login">Login</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a href="/users/signup">Sign Up</a>
+                    </li>
+    
+                <% } %> 
+            </ul>
+        </div>
+    </div>
 </header>

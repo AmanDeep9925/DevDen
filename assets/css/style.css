@@ -2,33 +2,12 @@ body{
     background-color: #272343;
     /* color: #ffffff; */
     font-family: 'fira code';
-}
-
-header{
-    position: fixed;
-    top: 0;
-    margin: auto;
-    height: 50px;
-    width: 100%;
-    color: #272343;
-    background-color: #ffffff;
-    text-align: center;
-    padding-top: 1rem;
+    margin: 0;
+    padding: 0;
 }
 
 h1{
     text-align: center;
     color:white;
     margin-top: 100px;
-}
-
-footer{
-    position: fixed;
-    bottom: 0;
-    margin: auto;
-    height: 50px;
-    width: 100%;
-    background-color: #ffffff;
-    text-align: center;
-    padding-bottom: -10px;
 }

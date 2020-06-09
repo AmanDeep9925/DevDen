@@ -18,7 +18,7 @@ const userController = require('../controllers/users_controllers');
 
 router.get('/',userController.user)
 
-router.get('/profile',userController.profile);
+router.get('/profile',passport.checkAuthentication,userController.profile);
 
 router.get('/posts',require('./posts'));
 
@@ -34,5 +34,7 @@ router.post('/createSession',passport.authenticate(
     {failureRedirect : '/users/login'}),
     userController.createSession
 );
+
+router.get('/logout',userController.destroySession);
 
 module.exports = router; 
