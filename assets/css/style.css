@@ -12,7 +12,7 @@ h1 {
 }
 
 #feed-post {
-  width: 40vw;
+  width: 60vw;
   margin: 50px auto;
   height: auto;
 }
@@ -42,7 +42,7 @@ h1 {
   padding-top: 15px;
   padding-left: 15px;
   font-size: 1.2rem;
-  width: 90%;
+  width: 100%;
 }
 
 #feed-post .post-form-container .form-group .post-btn {
@@ -73,7 +73,7 @@ h1 {
 
 #feed-post #posts-container .post-list .post-item-container {
   border: 2px solid white;
-  width: 90%;
+  width: 100%;
   height: auto;
   padding: 10px;
   margin-bottom: 30px;
