@@ -1,8 +1,28 @@
+const Posts = require('../models/post');
+
 module.exports.home = (req,res) =>{
 
-    console.log(req.cookies)
+    // console.log(req.cookies)
 
-    return res.render("home",{title : 'DevDen'});
+    // Posts.find({},(err,posts) =>{
+    //     return res.render("home",
+    //     {
+    //         title : 'DevDen',
+    //         posts : posts
+    //     });
+    // })
+    
+    // Populate the user of the each post
+
+    Posts.find({}).populate('user').exec((err,posts) =>{
+        return res.render("home",
+        {
+            title : 'DevDen',
+            posts : posts
+        });
+    })
+
+    
 }; 
 
 module.exports.practice = (req,res) =>{

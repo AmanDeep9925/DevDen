@@ -9,6 +9,7 @@ const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
+const sassMiddleware = require('node-sass-middleware');
 
 
 // Accesing databse
@@ -22,6 +23,15 @@ const passportLocal = require('./config/passport-local-strategy');
 
 // Mongo store
 const MongoStore = require('connect-mongo')(session);
+
+// Using Sass
+app.use(sassMiddleware({
+    src : './assets/scss',
+    dest: './assets/css',
+    debug:true,
+    outputStyle:'expanded',
+    prefix:'/css'
+}))
 
 // Using url encoder
 

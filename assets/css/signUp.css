@@ -1,40 +1,40 @@
-.container{
-    height: auto;
-    width: 40vw;
-    position: relative;
-    margin: auto;
-    top:10px;
-    /* border: 2px solid red; */
+.container {
+  height: auto;
+  width: 40vw;
+  position: relative;
+  margin: auto;
+  top: 10px;
+  /* border: 2px solid red; */
 }
 
-.signUp{
-    display: flex;
-    flex-direction: column;
+.signUp {
+  display: flex;
+  flex-direction: column;
 }
 
-.signUp label{
-    color: white;
-    font-size: 1.7rem;
-    margin: 10px 0;
+.signUp label {
+  color: white;
+  font-size: 1.7rem;
+  margin: 10px 0;
 }
 
-.signUp input{
-    border: none;
-    background-color: #272343;
-    border-bottom: 2px solid white;
-    color: white;
-    outline: none;
-    font-size: 1.5rem;
-    margin: 10px 0;
-    padding: 5px 0 10px 0;
+.signUp input {
+  border: none;
+  background-color: #272343;
+  border-bottom: 2px solid white;
+  color: white;
+  outline: none;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding: 5px 0 10px 0;
 }
 
-.signUp button{
-    margin-top: 10px;
-    font-size: 1.2rem;
-    width: 20%;
-    height:40px;
-    border-radius: 2px;
-    border:none;
-    outline: none;
+.signUp button {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  width: 20%;
+  height: 40px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
 }

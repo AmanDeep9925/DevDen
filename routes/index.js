@@ -9,13 +9,15 @@ router.get('/',homeController.home);
 
 // Login in and SignUp routes
 
-
+router.use('/users',require('./users'));
 
 // router.get('/practice',homeController.practice);
 
 // router.get('/about',homeController.practice);
 
-router.use('/users',require('./users'));
+// Post router
+
+router.use('/posts',require('./posts'));    
 
 
 // For any other route

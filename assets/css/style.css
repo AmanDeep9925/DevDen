@@ -1,13 +1,148 @@
-body{
-    background-color: #272343;
-    /* color: #ffffff; */
-    font-family: 'fira code';
-    margin: 0;
-    padding: 0;
+body {
+  background-color: #272343;
+  /* color: #ffffff; */
+  font-family: "fira code";
+  margin: 0;
+  padding: 0;
 }
 
-h1{
-    text-align: center;
-    color:white;
-    margin-top: 100px;
+h1 {
+  text-align: center;
+  color: white;
+}
+
+#feed-post {
+  width: 40vw;
+  margin: 50px auto;
+  height: auto;
+}
+
+#feed-post .post-form-heading {
+  color: white;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#feed-post .post-form-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+#feed-post .post-form-container .form-group {
+  width: auto;
+  height: auto;
+}
+
+#feed-post .post-form-container .form-group textarea {
+  border: 2px solid white;
+  border-radius: 3px;
+  outline: none;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 1.2rem;
+  width: 90%;
+}
+
+#feed-post .post-form-container .form-group .post-btn {
+  height: 2.5rem;
+  width: 15%;
+  background-color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  color: #272343;
+}
+
+#feed-post #posts-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#feed-post #posts-container .post-list {
+  list-style: none;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+  padding: 10px;
+}
+
+#feed-post #posts-container .post-list .post-item-container {
+  border: 2px solid white;
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .user-image {
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .user-name {
+  font-size: 18px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-time {
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.4;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details {
+  padding-left: 6%;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details h2 {
+  font-size: 30px;
+  padding: 15px 0 15px 15px;
+  margin: 0;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details .post-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions {
+  display: flex;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a {
+  color: white;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .like {
+  margin-right: 5px;
+  font-size: 15px;
+  color: red;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .comment {
+  margin-right: 5px;
+  font-size: 15px;
+  color: #4070af;
 }
