@@ -1,0 +1,92 @@
+#posts-container {
+  margin-top: 20px;
+  width: 60vw;
+  margin: 50px auto;
+  height: auto;
+}
+
+#posts-container .post-list {
+  list-style: none;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+  padding: 10px;
+}
+
+#posts-container .post-list .post-item-container {
+  border: 2px solid white;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-radius: 2px;
+}
+
+#posts-container .post-list .post-item-container .post-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#posts-container .post-list .post-item-container .post-item-header .user-info {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+#posts-container .post-list .post-item-container .post-item-header .user-info .user-image {
+  font-size: 30px;
+  margin-right: 20px;
+}
+
+#posts-container .post-list .post-item-container .post-item-header .user-info .user-name {
+  font-size: 18px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+#posts-container .post-list .post-item-container .post-item-header .user-info .post-time {
+  font-size: 10px;
+  margin: 0;
+  opacity: 0.4;
+}
+
+#posts-container .post-list .post-item-container .post-details {
+  padding-left: 6%;
+}
+
+#posts-container .post-list .post-item-container .post-details h2 {
+  font-size: 30px;
+  padding: 15px 0 15px 15px;
+  margin: 0;
+}
+
+#posts-container .post-list .post-item-container .post-details .post-item-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#posts-container .post-list .post-item-container .post-details .post-reactions {
+  display: flex;
+}
+
+#posts-container .post-list .post-item-container .post-details .post-reactions a {
+  color: white;
+  padding-left: 15px;
+  text-decoration: none;
+}
+
+#posts-container .post-list .post-item-container .post-details .post-reactions a .like {
+  margin-right: 5px;
+  font-size: 15px;
+  color: red;
+}
+
+#posts-container .post-list .post-item-container .post-details .post-reactions a .comment {
+  margin-right: 5px;
+  font-size: 15px;
+  color: #4070af;
+}

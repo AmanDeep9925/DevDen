@@ -1,3 +1,71 @@
-<h1>
-  Check your hunts
-</h1>
+<section id="feed-post">
+    <div class="post-form-heading">
+      <h2>
+        Welcome to Developer's Den
+      </h2>
+    </div>
+    <% if (locals.user) { %>
+      <div class="post-form-container">
+        <form action="/posts/create" method="post">
+          <div class="form-group">
+            <textarea name="content" id="" cols="90" rows="5" placeholder="Add a post..."></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" value="Post" class="post-btn">Post</button>
+          </div>
+        </form>
+      </div>
+    <% } %>
+  
+  
+  
+    
+    <div id="posts-container">
+        <ul class="post-list">
+          <% posts.forEach(post => { %>
+            <li class="post-item-container">
+              <div class="post-item-header">
+                <div class="user-info">
+                  <div class="user-image">
+                    <i class="far fa-user"></i>
+                  </div>
+                  <div>
+                    <p class="user-name">
+                      <%= post.user.name %> 
+                    </p>
+                    <p class="post-time">
+                      <%= post.createdAt.toDateString() %> 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="post-details">
+                <h2>
+                  <%= post.content %> 
+                </h2>
+                <div class="post-item-bottom">
+                  <div class="post-reactions">
+                    <a href="#" class="likes"><i class="fas fa-heart like"></i>22 Likes</a>
+                    <a href="#" class="comments"><i class="fas fa-comment comment"></i>15 Comments</a>
+                  </div>
+                </div>
+              </div>
+  
+  
+  
+              <div class="post-comment">
+                <% if (locals.user) { %>
+                <form action="/comments/create" method="POST">
+                  <input type="text" name="content" placeholder="Add a comment...">
+                  <input type="hidden" name="post" value="<%= post._id %> ">
+                  <input type="submit" value="Add Comment">
+                </form>
+                <% } %>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+  
+    </div>
+  </section>
+  

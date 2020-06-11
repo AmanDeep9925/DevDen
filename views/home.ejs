@@ -1,18 +1,20 @@
 <!-- Including partials -->
 
 <!-- Post Section -->
+<link rel="stylesheet" href="/css/posts.css">
+
 
 <section id="feed-post">
   <div class="post-form-heading">
     <h2>
-      Posts
+      Welcome to Developer's Den
     </h2>
   </div>
   <% if (locals.user) { %>
     <div class="post-form-container">
       <form action="/posts/create" method="post">
         <div class="form-group">
-          <textarea name="content" id="" cols="100" rows="5" placeholder="Add a post..."></textarea>
+          <textarea name="content" id="" cols="90" rows="5" placeholder="Add a post..."></textarea>
         </div>
         <div class="form-group">
           <button type="submit" value="Post" class="post-btn">Post</button>
@@ -20,10 +22,8 @@
       </form>
     </div>
   <% } %>
-
-  <!-- Post container -->
-
-  <div id="posts-container">
+  
+    <div id="posts-container">
       <ul class="post-list">
         <% posts.forEach(post => { %>
           <li class="post-item-container">
@@ -53,9 +53,14 @@
                 </div>
               </div>
             </div>
+
           </li>
         <% }) %>
       </ul>
-  </div>
-</section>
 
+  </div>
+
+
+  
+  
+</section>

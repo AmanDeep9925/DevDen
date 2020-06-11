@@ -1,4 +1,5 @@
-const Posts = require('../models/post');
+const Post = require('../models/post');
+
 
 module.exports.home = (req,res) =>{
 
@@ -14,7 +15,7 @@ module.exports.home = (req,res) =>{
     
     // Populate the user of the each post
 
-    Posts.find({}).populate('user').exec((err,posts) =>{
+    Post.find({}).populate('user').exec((err,posts) =>{
         return res.render("home",
         {
             title : 'DevDen',
@@ -22,7 +23,10 @@ module.exports.home = (req,res) =>{
         });
     })
 
-    
+    // return res.render("home",
+    //     {
+    //         title : 'DevDen',
+    //     });
 }; 
 
 module.exports.practice = (req,res) =>{

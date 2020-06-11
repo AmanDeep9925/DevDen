@@ -20,7 +20,7 @@ router.get('/',userController.user)
 
 router.get('/profile',passport.checkAuthentication,userController.profile);
 
-router.get('/posts',require('./posts'));
+// router.get('/posts',require('./posts'));
 
 router.get('/login',userController.login);
 
