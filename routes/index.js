@@ -18,11 +18,11 @@ router.use('/users',require('./users'));
 
 // Post router
 
-router.use('/posts',require('./posts'));   
+router.use('/posts',require('./posts')); 
 
 // Comments route
 
-// router.use('/comments',require('./comments'));
+router.use('/comments',require('./comments'));
 
 
 // For any other route
