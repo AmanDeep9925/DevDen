@@ -58,12 +58,30 @@
 
             <div class="post-comment">
               <% if (locals.user) { %>
-              <form action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Add a comment...">
+              <form action="/comments/create" method="POST" class="comment-form">
+                <input type="text" name="content" placeholder="Add a comment..." required class="comment-input">
                 <input type="hidden" name="post" value="<%= post._id %>">
-                <input type="submit" value="Add Comment">
+                <button type="submit" class="submit-com-btn"><i class="fas fa-comment"></i></button>
               </form>
               <% } %>
+
+              <!-- Showing comments -->
+              <div class="post-comments-list">
+                <ul id="post-comments- <%= post._id %> ">
+                 <% post.comments.forEach(comment => { %>
+                  <li>
+                    <div class="comment-info">
+                      <i class="far fa-user comment-user-image"></i>
+                        <div class="comment-details">
+                          <p class="comment-username"><%= comment.user.name %> </p>
+                          <p class="comment-content"><%= comment.content %> </p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                 <% }) %>
+                </ul>
+              </div>
             </div>
 
           </li>

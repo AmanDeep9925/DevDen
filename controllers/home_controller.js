@@ -15,7 +15,15 @@ module.exports.home = (req,res) =>{
     
     // Populate the user of the each post
 
-    Post.find({}).populate('user').exec((err,posts) =>{
+    Post.find({})
+    .populate('user')
+    .populate({
+        path:'comments',
+        populate :{
+            path :'user'
+        }
+    })
+    .exec((err,posts) =>{
         return res.render("home",
         {
             title : 'DevDen',
