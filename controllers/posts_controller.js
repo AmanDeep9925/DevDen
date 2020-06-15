@@ -1,4 +1,6 @@
 const Post = require('../models/post');
+const Comment = require('../models/comment');
+// TO create a post
 
 module.exports.create = (req, res) => {
     Post.create({
@@ -11,5 +13,27 @@ module.exports.create = (req, res) => {
         }
 
         return res.redirect('back');
+    })
+}
+
+// to delete a post
+
+module.exports.destroy = (req,res) =>{
+    Post.findById(req.params.id,(err,post) =>{
+        // Am i allowed to delete a post that i am no tauthorised
+        // .id is the string format of the _id
+        // console.log(post + " " + req.params.id);
+        if(post.id == req.params.id){
+            post.remove();
+            Comment.deleteMany({post : req.params.id},(err) =>{
+                if(err){
+                    console.log("Cannot delete the comments :/")
+                }
+            })
+            return res.redirect('back');
+        }else{
+            return res.redirect('back');  
+        }
+        
     })
 }
