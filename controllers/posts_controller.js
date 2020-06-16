@@ -20,6 +20,11 @@ module.exports.create = (req, res) => {
 
 module.exports.destroy = (req,res) =>{
     Post.findById(req.params.id,(err,post) =>{
+
+        if(err){
+            console.log("Unable to get the post :/");
+            return;
+        }
         // Am i allowed to delete a post that i am no tauthorised
         // .id is the string format of the _id
         // console.log(post + " " + req.params.id);

@@ -116,7 +116,7 @@ h1 {
 }
 
 #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-remove a {
-  color: white;
+  color: red;
   font-size: 1.5rem;
 }
 
@@ -254,4 +254,10 @@ h1 {
   color: black;
   align-self: center;
   margin-left: 20px;
+}
+
+#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-remove a {
+  color: red;
+  margin-left: 10px;
+  font-size: 20px;
 }
