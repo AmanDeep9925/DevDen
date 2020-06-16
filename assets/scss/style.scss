@@ -103,22 +103,35 @@ h1 {
             display: flex;
             align-items: center;
             padding: 5px;
+            width: 100%;
+            
+            // justify-content: center;
 
             .user-image {
               font-size: 30px;
               margin-right: 20px;
             }
 
-            .user-name {
-              font-size: 18px;
-              margin: 0;
-              text-transform: capitalize;
+            .post-header-details{
+              width: 85%;
+              .user-name {
+                font-size: 18px;
+                margin: 0;
+                text-transform: capitalize;
+              }
+  
+              .post-time {
+                font-size: 10px;
+                margin: 0;
+                opacity: 0.4;
+              }
             }
 
-            .post-time {
-              font-size: 10px;
-              margin: 0;
-              opacity: 0.4;
+            .post-remove{
+              a{
+                color:white;
+                font-size: 1.5rem;
+              }
             }
           }
         }
