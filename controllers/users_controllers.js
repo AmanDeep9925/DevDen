@@ -10,9 +10,15 @@ module.exports.user = (req,res) =>{
 }
 // Renders the post page
 module.exports.profile = (req,res) =>{
-    return res.render('profile',{
-        title : 'Manage your Den'
+
+    User.findById(req.params.id,(err,user)=>{
+        return res.render('profile',{
+            title : "User's  Den",
+            profileUser : user
+
+        })
     })
+
 }
 
 // Remders the signup page

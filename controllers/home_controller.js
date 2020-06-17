@@ -1,7 +1,8 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 
-module.exports.home = (req,res) =>{
+module.exports.home = (req, res) => {
 
     // console.log(req.cookies)
 
@@ -12,32 +13,35 @@ module.exports.home = (req,res) =>{
     //         posts : posts
     //     });
     // })
-    
+
     // Populate the user of the each post
 
     Post.find({})
-    .populate('user')
-    .populate({
-        path:'comments',
-        populate :{
-            path :'user'
-        }
-    })
-    .exec((err,posts) =>{
-        return res.render("home",
-        {
-            title : 'DevDen',
-            posts : posts
-        });
-    })
+        .populate('user')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'user'
+            }
+        })
+        .exec((err, posts) => {
+
+            User.find({}, (err, users) => {
+                return res.render("home", {
+                    title: 'DevDen',
+                    posts: posts,
+                    allUsers: users
+                });
+            })
+        })
 
     // return res.render("home",
     //     {
     //         title : 'DevDen',
     //     });
-}; 
+};
 
-module.exports.practice = (req,res) =>{
+module.exports.practice = (req, res) => {
     return res.end(`<h1> In the Practice Section </h1>`);
 }
 

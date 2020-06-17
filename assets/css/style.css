@@ -11,31 +11,32 @@ h1 {
   color: white;
 }
 
-#feed-post {
+main #feed-post {
+  display: inline-block;
   width: 40vw;
-  margin: auto;
+  margin: 5% 10% 0% 25%;
   height: auto;
 }
 
-#feed-post .post-form-heading {
+main #feed-post .post-form-heading {
   color: white;
   font-size: 1.3rem;
   margin: 0;
 }
 
-#feed-post .post-form-container {
+main #feed-post .post-form-container {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
 }
 
-#feed-post .post-form-container .form-group {
+main #feed-post .post-form-container .form-group {
   width: auto;
   height: auto;
 }
 
-#feed-post .post-form-container .form-group textarea {
+main #feed-post .post-form-container .form-group textarea {
   border: 2px solid white;
   border-radius: 3px;
   outline: none;
@@ -45,7 +46,7 @@ h1 {
   width: 100%;
 }
 
-#feed-post .post-form-container .form-group .post-btn {
+main #feed-post .post-form-container .form-group .post-btn {
   height: 2.5rem;
   width: 15%;
   background-color: white;
@@ -56,12 +57,12 @@ h1 {
   color: #272343;
 }
 
-#feed-post #posts-container {
+main #feed-post #posts-container {
   margin-top: 20px;
   width: 100%;
 }
 
-#feed-post #posts-container .post-list {
+main #feed-post #posts-container .post-list {
   list-style: none;
   color: white;
   display: flex;
@@ -71,7 +72,7 @@ h1 {
   padding: 10px;
 }
 
-#feed-post #posts-container .post-list .post-item-container {
+main #feed-post #posts-container .post-list .post-item-container {
   border: 2px solid white;
   background-color: #332b58;
   width: 100%;
@@ -81,97 +82,97 @@ h1 {
   border-radius: 2px;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info {
   display: flex;
   align-items: center;
   padding: 5px;
   width: 100%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .user-image {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .user-image {
   font-size: 30px;
   margin-right: 20px;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details {
   width: 85%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details .user-name {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details .user-name {
   font-size: 18px;
   margin: 0;
   text-transform: capitalize;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details .post-time {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-header-details .post-time {
   font-size: 10px;
   margin: 0;
   opacity: 0.4;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-remove a {
+main #feed-post #posts-container .post-list .post-item-container .post-item-header .user-info .post-remove a {
   color: red;
   font-size: 1.5rem;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details {
+main #feed-post #posts-container .post-list .post-item-container .post-details {
   padding-left: 6%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details h2 {
+main #feed-post #posts-container .post-list .post-item-container .post-details h2 {
   font-size: 30px;
   padding: 15px 0 15px 15px;
   margin: 0;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details .post-item-bottom {
+main #feed-post #posts-container .post-list .post-item-container .post-details .post-item-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions {
+main #feed-post #posts-container .post-list .post-item-container .post-details .post-reactions {
   display: flex;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a {
+main #feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a {
   color: white;
   padding-left: 15px;
   text-decoration: none;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .like {
+main #feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .like {
   margin-right: 5px;
   font-size: 15px;
   color: red;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .comment {
+main #feed-post #posts-container .post-list .post-item-container .post-details .post-reactions a .comment {
   margin-right: 5px;
   font-size: 15px;
   color: #4070af;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment {
+main #feed-post #posts-container .post-list .post-item-container .post-comment {
   padding-top: 10px;
   margin-left: 50px;
   margin-right: 50px;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .comment-form {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .comment-form {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .comment-form .comment-input {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .comment-form .comment-input {
   flex-grow: 1;
   height: 2rem;
   border: none;
@@ -182,7 +183,7 @@ h1 {
   outline: none;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .comment-form .submit-com-btn {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .comment-form .submit-com-btn {
   padding: 2px;
   margin-right: 30px;
   font-size: 2rem;
@@ -191,29 +192,29 @@ h1 {
   color: #ffffff;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .comment-form:hover {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .comment-form:hover {
   outline: none;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list {
   margin: 10px 0px;
   padding-top: 20px;
   border-top: 2px solid white;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list ul {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list ul {
   padding: 0;
   list-style: none;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-user-image {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-user-image {
   border: 1px solid white;
   border-radius: 100%;
   flex-grow: 0.5;
@@ -225,7 +226,7 @@ h1 {
   height: 20%;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details {
   display: inline-flex;
   flex-grow: 1;
   width: 100%;
@@ -236,7 +237,7 @@ h1 {
   padding: 5px 20px;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details .comment-username {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details .comment-username {
   margin: 0;
   text-align: center;
   font-size: 15px;
@@ -247,7 +248,7 @@ h1 {
   align-self: center;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details .comment-content {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-details .comment-content {
   margin: 0;
   font-size: 10px;
   font-weight: 100;
@@ -256,8 +257,37 @@ h1 {
   margin-left: 20px;
 }
 
-#feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-remove a {
+main #feed-post #posts-container .post-list .post-item-container .post-comment .post-comments-list .comment-info .comment-remove a {
   color: red;
   margin-left: 10px;
   font-size: 20px;
+}
+
+main #users-followers {
+  display: inline-block;
+  height: auto;
+  width: 20vw;
+  position: fixed;
+  top: 10%;
+  right: 0%;
+}
+
+main #users-followers .friends-container .following-heading {
+  color: white;
+  text-align: center;
+}
+
+main #users-followers .friends-container .following-heading h4 {
+  padding: 20px;
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+main #users-followers .friends-container .following-users .user-name {
+  text-align: center;
+}
+
+main #users-followers .friends-container .following-users .user-name a {
+  text-decoration: none;
+  color: white;
 }
