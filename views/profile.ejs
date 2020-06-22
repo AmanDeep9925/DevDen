@@ -2,27 +2,35 @@
   Manage your Profile
 </h1>
 
-
 <% if (user.id == profileUser.id) { %>
 
-  <!-- If user matches then show the form -->
-  <form action="/users/update/<%= profileUser.id %> " method="post">
-    
-    <input type="text" name="name" placeholder="Your Name" value="<%= profileUser.name %> ">
-    <input type="text" name="email" placeholder="Your Email" value="<%= profileUser.email %> " required>
-    <button type="submit" value="Update">Update</button>
-  </form>
- 
-  <% } else { %>
-   <!-- else shows the user info -->
+<!-- If user matches then show the form -->
+<form action="/users/update/<%= profileUser.id %> " method="post">
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    value="<%= profileUser.name %> "
+  />
+  <input
+    type="text"
+    name="email"
+    placeholder="Your Email"
+    value="<%= profileUser.email %> "
+    required
+  />
+  <button type="submit" value="Update">Update</button>
+</form>
 
-   <p style="color: white;">
-    <%= profileUser.name %> 
-  </p>
-  
-  <p style="color: white;">
-    <%= profileUser.email %> 
-  </p>
-  
+<% } else { %>
+<!-- else shows the user info -->
+
+<p style="color: white;">
+  <%= profileUser.name %>
+</p>
+
+<p style="color: white;">
+  <%= profileUser.email %>
+</p>
 
 <% } %>
