@@ -3,13 +3,15 @@
 // Install the express
 // Add the static folder for css
 
-// Accessing express 
+// Accessing express
 const port = 8000;
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const cookieParser = require('cookie-parser');
 const sassMiddleware = require('node-sass-middleware');
+const flash = require('connect-flash');
+const customMiddleware = require('./config/middleware');
 
 
 // Accesing databse
@@ -82,6 +84,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use(flash());
+app.use(customMiddleware.setFlash);
 
 // Intializing router
 app.use('/',require('./routes'));

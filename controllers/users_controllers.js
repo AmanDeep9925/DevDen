@@ -73,10 +73,10 @@ module.exports.create = (req, res) => {
             // create user
             User.create(req.body, (err, user) => {
                 if (err) {
-                    console.log("Error in creating user while singing Up :/ ");
+                    req.flash("error","Unable to create a new user :/");
                     return;
                 }
-
+                req.flash("success","Account created, Login to Continue");
                 return res.redirect('/users/login');
             })
         } else {
@@ -86,12 +86,15 @@ module.exports.create = (req, res) => {
 }
 
 module.exports.createSession = (req, res) => {
+    req.flash('success',"Logged In Successfully")
     return res.redirect('/');
 }
 
 // LogOut
 
 module.exports.destroySession = (req, res) => {
+
     req.logout();
+    req.flash('success','You have been logged out !');
     return res.redirect('/');
 }

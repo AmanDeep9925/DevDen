@@ -14,10 +14,10 @@ module.exports.create = async function (req, res) {
                 user: req.user._id
             });
 
-            post.commens.push(comment);
+            post.comments.push(comment);
             post.save();
 
-            console.log("Added a Commnet :)");
+            req.flash("success","Added a Commnet :)");
             res.redirect('/');
         }
     } catch (err) {
@@ -26,7 +26,7 @@ module.exports.create = async function (req, res) {
 }
 
 module.exports.destroy = async (req, res) => {
-    
+
 
     try {
         let comment = await Comment.findById(req.params.id);
@@ -35,6 +35,7 @@ module.exports.destroy = async (req, res) => {
             comment.remove();
 
             let post = await Post.findByIdAndUpdate(postId,{$pull : {comments : req.params.id}});
+            req.flash('success',"Comment removed :/");
             return res.redirect('back');
         }else{
             return res.redirect('back');
