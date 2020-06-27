@@ -13,7 +13,7 @@
 
     <% if (locals.user) { %>
     <div class="post-form-container">
-      <form action="/posts/create" method="post">
+      <form action="/posts/create" method="post" id="new-postform">
         <div class="form-group">
           <textarea
             name="content"
@@ -24,7 +24,7 @@
           ></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" value="Post" class="post-btn">Add Post</button>
+          <button type="submit" value="Post" class="post-btn" id="post-btn">Add Post</button>
         </div>
       </form>
     </div>
@@ -55,5 +55,4 @@
   </section>
 </main>
 
-
-
+<script src="/js/home_posts.js"></script>

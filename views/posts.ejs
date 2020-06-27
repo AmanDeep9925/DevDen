@@ -16,10 +16,10 @@
         </form>
       </div>
     <% } %>
-  
-  
-  
-    
+
+
+
+
     <div id="posts-container">
         <ul class="post-list">
           <% posts.forEach(post => { %>
@@ -31,17 +31,17 @@
                   </div>
                   <div>
                     <p class="user-name">
-                      <%= post.user.name %> 
+                      <%= post.user.name %>
                     </p>
                     <p class="post-time">
-                      <%= post.createdAt.toDateString() %> 
+                      <%= post.createdAt.toDateString() %>
                     </p>
                   </div>
                 </div>
               </div>
               <div class="post-details">
                 <h2>
-                  <%= post.content %> 
+                  <%= post.content %>
                 </h2>
                 <div class="post-item-bottom">
                   <div class="post-reactions">
@@ -53,7 +53,6 @@
             </li>
           <% }) %>
         </ul>
-  
+
     </div>
   </section>
-  
