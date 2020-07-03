@@ -12,6 +12,11 @@
                 success: function (data) {
                     let newPost = newPostDom(data.data.post);
                     $('#posts-container>ul').prepend(newPost);
+                    if(data.success == true){
+                      setTimeout(function(){
+                          location.reload();
+                      }, 1000);
+                   }
                 }, error: function (error) {
                     console.log(error.responseText);
                 }
@@ -22,7 +27,7 @@
     //Method to create post
 
     let newPostDom = function (post) {
-
+      // console.log(post);
         return(`
         <li id="post-${post._id}" class="post-item-container">
         <div class="post-item-header">
@@ -92,8 +97,34 @@
         `)
     }
 
+    let deletePost = function(deleteLink){
+      $(deleteLink).click((event)=>{
+        event.preventDefault();
+        // console.log($(deleteLink).prop('href'));
+        $.ajax({
+          type: 'get',
+          url : $(deleteLink).prop('href'),
+          success : (data)=>{
+            $(`#post-${data.data.post_id}`).remove();
+            console.log("Post Removed");
+            if(data.success == true){ // if true (1)
+              setTimeout(function(){// wait for 5 secs(2)
+                   location.reload(); // then reload the page.(3)
+              }, 1000);
+           }
+          },error : (data)=>{
+            console.log("error");
+          }
+        })
+      })
+    }
+
     let addPost = $('#post-btn');
 
     addPost.on('click',createPost());
 
+    let deletePostbtns = $('.delete-post-button');
 
+    for (const btn of deletePostbtns) {
+      deletePost(btn);
+    }

@@ -43,6 +43,7 @@ app.use(cookieParser());
 
 // accessing the static folders
 app.use(express.static('./assets'));
+app.use('/uploads',express.static(__dirname + '/uploads'));
 // To access the express layout
 app.use(expressLayouts);
 
