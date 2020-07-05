@@ -18,7 +18,7 @@ router.use('/users',require('./users'));
 
 // Post router
 
-router.use('/posts',require('./posts')); 
+router.use('/posts',require('./posts'));
 
 // Comments route
 
@@ -29,6 +29,9 @@ router.use('/comments',require('./comments'));
 
 // router.use('/routeName',require('routerFile'));
 router.use('/about',require('./about'));
+
+// Using api routes
+router.use('/api',require('./api'));
 
 
 // console.log("router loaded")
