@@ -1,40 +1,47 @@
 const Post = require('../../../models/post');
 const Comment = require('../../../models/comment');
 
-module.exports.index = async (req,res)=>{
+module.exports.index = async (req, res) => {
     let posts = await Post.find({})
-    .sort('-createdAt')
-    .populate('user')
-    .populate({
-        path : 'comments',
-        populate : {
-            path : 'user'
-        }
-    });
+        .sort('-createdAt')
+        .populate('user')
+        .populate({
+            path: 'comments',
+            populate: {
+                path: 'user'
+            }
+        });
 
-    return res.json(200,{
-        message : "posts",
-        posts : posts
+    return res.json(200, {
+        message: "posts",
+        posts: posts
     })
 }
 
-module.exports.destroy = async (req,res) =>{
+module.exports.destroy = async (req, res) => {
+
     try {
         let post = await Post.findById(req.params.id);
+        
 
-        post.remove();
+        if (post.user == req.user.id) {
 
-        await Comment.deleteMany({
-            post : req.params.id
-        });
+            post.remove();
 
-        return res.json(200,{
-            message : " Post and associated Commnets deleted SuccessFully"
-        })
+            await Comment.deleteMany({post: req.params.id});
 
+            return res.json(200, {
+                message: " Post and associated Commnets deleted SuccessFully"
+            });
+
+        }else{
+            return res.json(401,{
+                message : "You cannot delete this post :/"
+            })
+        }
     } catch (error) {
-        return res.json(500,{
-            message : 'Internal server error :/'
+        return res.json(500, {
+            message: 'Internal server error :/'
         })
     }
 }
