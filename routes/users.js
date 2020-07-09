@@ -12,11 +12,12 @@ const passport = require('passport');
 
 
 const userController = require('../controllers/users_controllers');
+const { route } = require('./api');
 
 
 // users page
 
-router.get('/',userController.user)
+router.get('/',userController.user);
 
 router.get('/profile/:id',passport.checkAuthentication,userController.profile);
 router.post('/update/:id',passport.checkAuthentication,userController.update);
@@ -38,4 +39,11 @@ router.post('/createSession',passport.authenticate(
 
 router.get('/logout',userController.destroySession);
 
-module.exports = router; 
+// Google Oauth
+router.get('/auth/google',passport.authenticate('google',{
+    scope: ['profile','email']
+}));
+
+router.get('/auth/google/callback',passport.authenticate('google',{failureRedirect : '/user/signup'}),userController.createSession);
+
+module.exports = router;
